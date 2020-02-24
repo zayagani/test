@@ -11,7 +11,7 @@ class RouteComA extends Component{
 
     constructor(props){
         super(props);
-        this.sendValue = this.sendValue.bind(this);    
+      //  this.sendValue = this.sendValue.bind(this);    
         this.setValue = this.setValue.bind(this);
         this.state = {
           userID: ""
@@ -24,21 +24,10 @@ setValue(e){
     });
   }
 
-sendValue(e){
-    alert(this.state.userID);
- e.preventDefault();
- browserHistory.push('/routecomb'); 
-    
-  }
-
 
 render(){
-
     return( <div>
-        <input type='text' value={this.state.userID} onChange={this.setValue} />
-        <button onClick={this.sendValue}>send</button>
-        
-
+        <input type='text' value={this.state.userID.toUpperCase()} onChange={this.setValue} />
         <Link
   to={{
     pathname: "/routecomb",
